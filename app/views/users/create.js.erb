@@ -1,0 +1,6 @@
+<% if @user.errors.any? %>
+    alert("Invalid Details are added")
+<% else %>
+$("#userTable").prepend("<%= escape_javascript render 'user_row', user: @user %>")
+$(".close-model").click()
+<% end %>
