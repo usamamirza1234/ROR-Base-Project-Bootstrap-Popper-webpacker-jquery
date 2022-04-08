@@ -50,7 +50,7 @@ Rails.application.configure do
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -118,15 +118,13 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   #
-  config.action_mailer.default_url_options = {:host => 'arcane-ocean-19433.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.default_url_options = {:host => 'arcane-ocean-19433.herokuapp.com', :protocol => 'http'}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              =>  'smtp.sendgrid.net',
-    :port                 =>  '587',
+    :port                 =>  587,
     :authentication       =>  :plain,
     :user_name            =>  'usamak.mirza@gmail.com',
     :password             =>  '_+U4mPCch6/q4EB',
