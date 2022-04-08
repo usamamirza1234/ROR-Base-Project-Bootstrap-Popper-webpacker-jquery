@@ -1,0 +1,41 @@
+<div class="bg-gradient-primary  col-lg-6 mx-lg-auto mt-4">
+
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-header">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-2">Resend unlock instructions?</h1>
+                <p class="mb-4">We get it, stuff happens. Just enter your email address below
+                  and we'll send you a link to reset your password!</p>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'user' }) do |f| %>
+                <%= render "app_users/shared/error_messages", resource: resource %>
+                <div class="form-group">
+                  <%= f.email_field :email, id: "exampleInputEmail", class: 'form-control form-control-user', placeholder: 'Enter email address',
+                                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+                </div>
+                <div class="actions">
+                  <%= f.submit "Resend confirmation instructions", class: 'btn btn-primary btn-user btn-block' %>
+                </div>
+              <% end %>
+              <%= render "app_users/shared/links" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+

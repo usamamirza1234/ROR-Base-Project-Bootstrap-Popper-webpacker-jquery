@@ -1,0 +1,48 @@
+<div class="bg-gradient-primary col-lg-6 mx-lg-auto mt-4">
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-header">
+        <div class="text-center">
+          <h1 class="h4 text-gray-900 mb-4">Create Account!</h1>
+        </div>
+      </div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'user' }) do |f| %>
+          <%= render "app_users/shared/error_messages", resource: resource %>
+
+          <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <%= f.text_field :first_name, class: 'form-control form-control-user', id: "exampleFirstName", placeholder: "First Name" %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.text_field :last_name, class: 'form-control form-control-user', id: "exampleLastName", placeholder: "Last Name" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :username, class: 'form-control form-control-user', id: "exampleUserName", placeholder: "User Name" %>
+          </div>
+          <div class="form-group">
+            <%= f.email_field :email, class: 'form-control form-control-user', id: "exampleInputEmail", placeholder: "Email Address" %>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <%= f.password_field :password, class: 'form-control form-control-user', id: "exampleInputPassword", placeholder: "Password" %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.password_field :password_confirmation, class: 'form-control form-control-user', id: "exampleRepeatPassword", placeholder: "Repeat Password" %>
+            </div>
+          </div>
+          <div class="form-group  mb-2">
+            <%= f.label :contact_number, class: 'mb-2' %>
+            <%= f.text_field :contact_number, class: 'form-control form-control-lg' %>
+          </div>
+          <div class="actions  mt-4">
+            <%= f.submit "Sign up", class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+        <%= render "app_users/shared/links" %>
+
+      </div>
+    </div>
+  </div>
+</div>

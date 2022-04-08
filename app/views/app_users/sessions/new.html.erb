@@ -1,0 +1,37 @@
+<div class="card o-hidden border-0 shadow-lg  col-lg-6 mx-lg-auto mt-4">
+  <div class="card-header">
+    <div class="text-center">
+      <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'app_user' }) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-user' %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control form-control-user' %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="form-group">
+          <div class="custom-control custom-checkbox small">
+            <%= f.check_box :remember_me, class: "custom-control-input", id: "user_remember_me" %>
+            <%= f.label :remember_me, class: "custom-control-label", for: "user_remember_me" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="actions  mt-4">
+        <%= f.submit "Log in", class: 'btn btn-primary btn-user btn-block' %>
+      </div>
+    <% end %>
+    <%= render "app_users/shared/links" %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
