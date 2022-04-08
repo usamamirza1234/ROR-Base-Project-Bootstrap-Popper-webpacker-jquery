@@ -1,17 +1,29 @@
 class AppUser < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :validatable,
-         :confirmable,
-         :lockable,
-         :timeoutable,
-         :trackable,
-         authentication_keys: [:login]
 
+  if Rails.env.production?
+    devise :database_authenticatable,
+           :registerable,
+           :recoverable,
+           :rememberable,
+           :validatable,
+           :lockable,
+           :timeoutable,
+           :trackable,
+           authentication_keys: [:login]
+  else
+    devise :database_authenticatable,
+           :registerable,
+           :recoverable,
+           :rememberable,
+           :validatable,
+           :confirmable,
+           :lockable,
+           :timeoutable,
+           :trackable,
+           authentication_keys: [:login]
+  end
 
   validates :username, presence: true ,uniqueness: true
   attr_accessor :login
