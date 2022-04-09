@@ -1,0 +1,10 @@
+<% if @article.errors.any? %>
+$("#errorsContainer").html("<%= escape_javascript render 'error', article: @article %>")
+<% else %>
+$("#articleRow_<%= @article.id %>").replaceWith("<%= escape_javascript render 'article_row', article: @article %>")
+$(".close-model").click()
+<% end %>
+
+
+
+// format.js -> perform action while saving record
