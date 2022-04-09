@@ -1,2 +1,9 @@
-<h1>Welcome#home</h1>
-<p>Find me in app/views/welcome/home.html.erb</p>
+<div class="center jumbotron">
+  <h1 >Learning</h1>
+  <%#= image_pack_tag('cover_image.jpg') %>
+  <% if app_user_signed_in? %>
+      <%= link_to "Sign Out", destroy_app_user_session_path, method: :delete, class: ' btn btn-warning btn-lg btn-xlarge' %>
+  <% else %>
+      <%= link_to "Sign in", new_app_user_session_path, class: ' btn btn-warning btn-lg btn-xlarge' %>
+  <% end %>
+</div>
