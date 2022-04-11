@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :app_functionalities
   resources :articles
   devise_for :app_users, controllers: {
     sessions: 'app_users/sessions',

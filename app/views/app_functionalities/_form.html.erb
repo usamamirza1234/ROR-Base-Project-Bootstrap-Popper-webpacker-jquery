@@ -1,0 +1,32 @@
+<%= form_with(model: app_functionality) do |form| %>
+  <% if app_functionality.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(app_functionality.errors.count, "error") %> prohibited this app_functionality from being saved:</h2>
+
+      <ul>
+        <% app_functionality.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :app_version %>
+    <%= form.text_field :app_version %>
+  </div>
+
+  <div class="field">
+    <%= form.label :app_package %>
+    <%= form.text_field :app_package %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_locked %>
+    <%= form.check_box :is_locked %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

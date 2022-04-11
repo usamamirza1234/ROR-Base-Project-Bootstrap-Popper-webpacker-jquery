@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>App version:</strong>
+  <%= @app_functionality.app_version %>
+</p>
+
+<p>
+  <strong>App package:</strong>
+  <%= @app_functionality.app_package %>
+</p>
+
+<p>
+  <strong>Is locked:</strong>
+  <%= @app_functionality.is_locked %>
+</p>
+
+<%= link_to 'Edit', edit_app_functionality_path(@app_functionality) %> |
+<%= link_to 'Back', app_functionalities_path %>

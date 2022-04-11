@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_version: MyString
+  app_package: MyString
+  is_locked: false
+
+two:
+  app_version: MyString
+  app_package: MyString
+  is_locked: false
