@@ -65,6 +65,6 @@ class AppFunctionalitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def app_functionality_params
-      params.require(:app_functionality).permit(:app_version, :app_package, :is_locked)
+      params.require(:app_functionality).permit(:app_version, :app_package, :is_locked, :app_image, :app_message)
     end
 end
